@@ -1,6 +1,5 @@
 document.querySelector('#submit').addEventListener('click', (e) => {
-    // console.log(e)
-    
+      
     const priorityEl = document.querySelector('#priority')
     const changeTypeEl = document.querySelector('#changeType')
 
