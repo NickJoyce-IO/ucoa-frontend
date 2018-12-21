@@ -56,10 +56,12 @@ const buildTable = (data) => {
         tr.classList.add('govuk-table_row')
 
         // create the ID element and add the data
-        const tdId = document.createElement('a')
+        const tdId = document.createElement('td')
         tdId.classList.add('govuk-table__cell')
-        tdId.setAttribute('href', `./edit.html#${record.uuid}`)
-        tdId.textContent = record.id
+        const tdLink = document.createElement('a')
+        tdLink.setAttribute('href', `./edit.html#${record.uuid}`)
+        tdLink.textContent = record.id
+        tdId.appendChild(tdLink)
         tr.appendChild(tdId)
 
         // create the User Name element and add the data
