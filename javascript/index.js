@@ -23,8 +23,7 @@ document.querySelector('#submit').addEventListener('click', (e) => {
         enable: document.querySelector('#enable').value,
         costCentreEntity: document.querySelector('#costCentreEntity').value
     }
-    console.log(object)
-
+    
     const url = 'http://localhost:3000/costcentre'
     const params = {
         headers: {"Content-Type" : "application/json"
@@ -33,9 +32,20 @@ document.querySelector('#submit').addEventListener('click', (e) => {
         method: 'POST'
     }
 
-    console.log(params)
+    
     fetch(url,params)
-    .then(data=> data.json()).then(res=>console.log(res))
+    .then(data=> data.json()).then(res=> {
+        
+        console.log(res)
+
+        localStorage.setItem('change', JSON.stringify(res))
+
+        location.assign('./success.html')
+        
+    
+    })
+
+    
 })
 
 document.querySelector('#approvals').addEventListener('click', (e) => {
