@@ -56,8 +56,9 @@ const buildTable = (data) => {
         tr.classList.add('govuk-table_row')
 
         // create the ID element and add the data
-        const tdId = document.createElement('td')
+        const tdId = document.createElement('a')
         tdId.classList.add('govuk-table__cell')
+        tdId.setAttribute('href', `./edit.html#${record.uuid}`)
         tdId.textContent = record.id
         tr.appendChild(tdId)
 
