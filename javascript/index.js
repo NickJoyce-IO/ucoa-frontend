@@ -48,6 +48,8 @@ document.querySelector('#submit').addEventListener('click', (e) => {
     
 })
 
-document.querySelector('#approvals').addEventListener('click', (e) => {
-    location.assign('./approvals.html')
+document.querySelector('#code').addEventListener('change', e => {
+ if (e.target.value.length < 6) {
+     console.log('codes must be 6 characters')
+ }
 })

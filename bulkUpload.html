@@ -85,6 +85,8 @@
     </div>
   </header>
 
+
+
   <div class="govuk-width-container">
     <div class="govuk-phase-banner">
       <p class="govuk-phase-banner__content"><strong class="govuk-tag govuk-phase-banner__content__tag ">
@@ -97,160 +99,21 @@
       </p>
     </div>
 
-    <!--<a href="#" class="govuk-back-link">Back</a>-->
+    <a href="#" class="govuk-back-link">Back</a>
 
     <main class="govuk-main-wrapper app-main-class" id="main-content" role="main">
-      <h1 class="govuk-heading-xl">Create Change Request</h1>
-
-      <details class="govuk-details">
-        <summary class="govuk-details__summary">
-          <span class="govuk-details__summary-text">
-            Help
-          </span>
-        </summary>
-        <div class="govuk-details__text">
-          Use this page to make a request for a new code, or change an existing one. If you would like to make a number of changes in one go. Please click <a href="#">here</a> to access the bulk uploader
-        </div>
-      </details>
-
-      <fieldset class="govuk-fieldset">
-          <div class="govuk-grid-row">
-              <div class="govuk-grid-column-one-half">
-          <label class="govuk-label" for="name">
-              Name
-          </label>
-          <input class="govuk-input govuk-input--width-20" id="name" name="name" type="text">
-            </div>
-            <div class="govuk-grid-column-one-half">
-        <label class="govuk-label" for="telNumber">
-            Telephone Number
+      <h1 class="govuk-heading-xl">Bulk upload</h1>
+      <div class="govuk-form-group">
+        <label class="govuk-label" for="file-upload-1">
+          Upload a file
         </label>
-        <input class="govuk-input govuk-input--width-20" id="telNumber" name="telNumber" type="text">
-        </div>    
-    </div>
-    <div class="govuk-grid-row">
-        <div class="govuk-grid-column-one-half">
-        <label class="govuk-label" for="email">
-            Email
-        </label>
-        <input class="govuk-input govuk-input--width-20" id="email" name="email" type="email">
-    </div>
-    <div class="govuk-grid-column-one-half">
-        <label class="govuk-label" for="directorate">
-            Directorate
-        </label>
-        <input class="govuk-input govuk-input--width-20" id="directorate" name="directorate" type="text">
-    </div>
-    </div>
-        <label class="govuk-label" for="businessRequirement">
-            What is the requirement for the business?
-          </label>
-          <span id="businessRequirement-hint" class="govuk-hint">
-            Please add more information about how this change affects the business
-          </span>
-          <textarea class="govuk-textarea" id="businessRequirement" name="businessRequirement" rows="5" aria-describedby="more-detail-hint"></textarea>
+        <input class="govuk-file-upload" id="file-upload-1" name="file-upload-1" type="file">
+      </div>
 
-          <div class="govuk-grid-row">
-              <div class="govuk-grid-column-one-third">
-          <label class="govuk-label" for="priority">
-            Priority
-          </label>
-          <select class="govuk-select" id="priority" name="priority">
-            <option value="high">High</option>
-            <option value="medium" selected>Medium</option>
-            <option value="low">Low</option>
-          </select>
-        </div>
-        <div class="govuk-grid-column-two-thirds">
-          <label class="govuk-label" for="priorityJustification">
-            Please justify the priority.
-          </label>
-          <span id="priorityJustifcation-hint" class="govuk-hint">
-            Please add more information about why you have set the priority as is
-          </span>
-          <textarea class="govuk-textarea" id="priorityJustification" name="priorityJustification" rows="5" aria-describedby="more-detail-hint"></textarea>
-        </div>
-        </div>
-        <label class="govuk-label" for="changeType">
-                Change Type
-              </label>
-              <select class="govuk-select" id="changeType" name="changeType">
-                <option value="new">New code</option>
-                <option value="change" selected>Change existing</option>
-              </select>
-              <span id="change-hint" class="govuk-hint">
-                    Now add information about the change you wish to make
-                  </span>
-              <div class="govuk-grid-row">
-                <div class="govuk-grid-column-one-quarter">
-                        <label class="govuk-label" for="level">
-                               Level
-                            </label>
-                            <input class="govuk-input govuk-input--width-20" id="level" name="level" type="text">
-                </div>
-                <div class="govuk-grid-column-one-quarter">
-                     
-                  <label class="govuk-label" for="code">
-                               Code
-                            </label>
-                            <input class="govuk-input govuk-input--width-20" id="code" name="code" type="text">
-                </div>
-                <div class="govuk-grid-column-one-half">
-                        <label class="govuk-label" for="description">
-                                Description
-                            </label>
-                            <input class="govuk-input govuk-input--width-30" id="description" name="description" type="text">
-                </div>
-                
-        </div>
-        <span id="change-hint" class="govuk-hint">
-                Now add information about the parent of the code you wish to change. This will ensure that it sits in the correct place in the hierarchy
-              </span>
-          <div class="govuk-grid-row">
-            <div class="govuk-grid-column-one-quarter">
-                    <label class="govuk-label" for="parentLevel">
-                           Parent Level
-                        </label>
-                        <input class="govuk-input govuk-input--width-20" id="parentLevel" name="parentLevel" type="text">
-            </div>
-            <div class="govuk-grid-column-one-quarter">
-                    <label class="govuk-label" for="parentCode">
-                           Parent Code
-                        </label>
-                        <input class="govuk-input govuk-input--width-20" id="parentCode" name="parentCode" type="text">
-            </div>
-            <div class="govuk-grid-column-one-half">
-                    <label class="govuk-label" for="parentDescription">
-                            Parent Description
-                        </label>
-                        <input class="govuk-input govuk-input--width-30" id="parentDescription" name="parentDescription" type="text">
-            </div> 
-    </div>
-    <div class="govuk-grid-row">
-            <div class="govuk-grid-column-one-third">
-                    <label class="govuk-label" for="dffType">
-                            DFF Type
-                        </label>
-                        <input class="govuk-input govuk-input--width-30" id="dffType" name="dffType" type="text">
-    </div>
-    <div class="govuk-grid-row">
-            <div class="govuk-grid-column-one-third">
-                    <label class="govuk-label" for="enable">
-                            Enable
-                        </label>
-                        <input class="govuk-input govuk-input--width-30" id="enable" name="enable" type="text">
-    </div>
-    <div class="govuk-grid-row">
-            <div class="govuk-grid-column-one-third">
-                    <label class="govuk-label" for="costCentreEntity">
-                            Cost Centre Entity
-                        </label>
-                        <input class="govuk-input govuk-input--width-30" id="costCentreEntity" name="costCentreEntity" type="text">
-    </div>
-    </div>
-            
-      </fieldset>
-      <button type="submit" class="govuk-button" id="submit">Submit</button>
+      <button id="upload" class="govuk-button">
+        Upload
+      </button>
+
     </main>
   </div>
 
@@ -300,6 +163,8 @@
 
   <script src="javascript/govuk-frontend-2.4.1.min.js"></script>
   <script src="javascript/index.js"></script>
+  <script src="javascript/bulkUpload.js"></script>
+  <script src="javascript/papaparse.min.js"></script>
 </body>
 
 </html>
