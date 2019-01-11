@@ -35,6 +35,10 @@ document.querySelector('#upload').addEventListener('click', (e) => {
             const trHeader = document.createElement('tr')
             trHeader.classList.add('govuk-table_row')
             
+            const thId = document.createElement('th')
+            thId.classList.add('govuk-table__header')
+            thId.textContent = 'id'
+            
             // add table header for change type
             const thChangeType = document.createElement('th')
             thChangeType.classList.add('govuk-table__header')
@@ -87,6 +91,7 @@ document.querySelector('#upload').addEventListener('click', (e) => {
 
             
             tbl.appendChild(trHeader)
+            trHeader.appendChild(thId)
             trHeader.appendChild(thChangeType)
             trHeader.appendChild(thLevel)
             trHeader.appendChild(thCode)
@@ -103,6 +108,14 @@ document.querySelector('#upload').addEventListener('click', (e) => {
             
             const tr = document.createElement('tr')
             tr.classList.add('govuk-table_row')
+
+            const tdId = document.createElement('td')
+            tdId.classList.add('govuk-table__cell')
+            const tdLink = document.createElement('a')
+            tdLink.setAttribute('href', `./edit.html#${row.uuid}`)
+            tdLink.textContent = row.id
+            tdId.appendChild(tdLink)
+            tr.appendChild(tdId)
 
             const tdChangeType= document.createElement('td')
             tdChangeType.classList.add('govuk-table__cell')
@@ -161,7 +174,7 @@ document.querySelector('#upload').addEventListener('click', (e) => {
          })
          const messageDiv = document.createElement('div')
          messageDiv.classList = 'govuk-heading-l'
-         messageDiv.innerHTML = 'Success - the following requests have been uploaded'
+         messageDiv.innerHTML = 'Success - the following requests have been submitted'
          dataDiv.appendChild(messageDiv)
          dataDiv.appendChild(tbl)
          console.log(data)
