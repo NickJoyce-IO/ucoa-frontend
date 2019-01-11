@@ -2,7 +2,7 @@ document.querySelector('#upload').addEventListener('click', (e) => {
     console.log('pressed')
 
     const file = document.querySelector('#file-upload-1').files[0]
-    //console.log(file)
+
 
     console.log('starting parse------------')
     let data = ''
@@ -11,8 +11,20 @@ document.querySelector('#upload').addEventListener('click', (e) => {
         dynamicTyping: true,
         complete: function(results) {
             
-            const data = results
-            console.log(JSON.stringify(results.data))
+            const url = 'http://localhost:3000/costcentre/bulkupload'
+            const params = {
+                headers: {"Content-Type" : "application/json"
+                },
+                body: JSON.stringify(results.data),
+                method: 'POST'
+            }
+
+            fetch(url,params)
+            .then(data=> data.json()).then(res=> {
+                
+                console.log(res)
+
+                 //     console.log(JSON.stringify(results.data))
 
             // set up the table and add it to the div
             const tbl = document.createElement('table')
@@ -87,7 +99,7 @@ document.querySelector('#upload').addEventListener('click', (e) => {
             trHeader.appendChild(thCostCentreEntity)
 
         
-        results.data.forEach((row) => {
+        res.forEach((row) => {
             
             const tr = document.createElement('tr')
             tr.classList.add('govuk-table_row')
@@ -147,10 +159,17 @@ document.querySelector('#upload').addEventListener('click', (e) => {
             tbl.appendChild(tr)
             
          })
+         const messageDiv = document.createElement('div')
+         messageDiv.classList = 'govuk-heading-l'
+         messageDiv.innerHTML = 'Success - the following requests have been uploaded'
+         dataDiv.appendChild(messageDiv)
          dataDiv.appendChild(tbl)
-         console.log(Object.keys(data).length)
+         console.log(data)
+                
+            })
          
-        }
+         }
+         
       })
-
+      
     })
