@@ -12,6 +12,7 @@ document.querySelector('#upload').addEventListener('click', (e) => {
         complete: function(results) {
             
             const data = results
+            console.log(JSON.stringify(results.data))
 
             // set up the table and add it to the div
             const tbl = document.createElement('table')
@@ -87,8 +88,7 @@ document.querySelector('#upload').addEventListener('click', (e) => {
 
         
         results.data.forEach((row) => {
-            console.log(row)
-
+            
             const tr = document.createElement('tr')
             tr.classList.add('govuk-table_row')
 
@@ -148,7 +148,7 @@ document.querySelector('#upload').addEventListener('click', (e) => {
             
          })
          dataDiv.appendChild(tbl)
-         console.log(data)
+         console.log(Object.keys(data).length)
          
         }
       })
